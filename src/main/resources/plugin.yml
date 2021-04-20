@@ -1,0 +1,11 @@
+name: PrinterPerm
+main: com.reliableplugins.printerperm.Main
+version: 1.0
+depend:
+  - Vault
+  - Printer
+author: Reachy
+commands:
+  printer:
+    description: Help command for PrinterPerm
+    usage: "/printerperm help"
