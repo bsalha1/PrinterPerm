@@ -25,6 +25,7 @@ public class ListenPrinter implements Listener
     @EventHandler
     public void onPrinterOff(PrinterOffEvent event)
     {
+
         PrinterPlayer player = event.getPrinterPlayer();
         Main.INSTANCE.getPermission().playerRemove(player.getPlayer(), Main.INSTANCE.getMainConfig().getPermission());
     }

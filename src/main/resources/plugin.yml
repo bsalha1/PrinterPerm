@@ -6,6 +6,6 @@ depend:
   - Printer
 author: Reachy
 commands:
-  printer:
+  printerperm:
     description: Help command for PrinterPerm
     usage: "/printerperm help"

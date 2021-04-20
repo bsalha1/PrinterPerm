@@ -66,22 +66,22 @@ public class Main extends JavaPlugin
         RegisteredServiceProvider<Permission> permissionProvider = getServer().getServicesManager().getRegistration(Permission.class);
         if (permissionProvider != null)
         {
-            permission = permissionProvider.getProvider();
+            this.permission = permissionProvider.getProvider();
         }
         else
         {
             getLogger().log(Level.SEVERE, "Failed to find permission provider");
         }
 
-        if(permission == null)
+        if(this.permission == null)
         {
             getLogger().log(Level.SEVERE, "Failed to get permission provider");
         }
     }
     private FileManager setupConfigs()
     {
-        com.reliableplugins.printerperm.config.FileManager fileManager = new com.reliableplugins.printerperm.config.FileManager();
-        fileManager.addFile(this.mainConfig = new com.reliableplugins.printerperm.config.MainConfig());
+        FileManager fileManager = new FileManager();
+        fileManager.addFile(this.mainConfig = new MainConfig());
 
         return fileManager;
     }
@@ -93,7 +93,7 @@ public class Main extends JavaPlugin
 
     private void setupCommands()
     {
-        this.commandHandler = new CommandHandler("printer");
+        this.commandHandler = new CommandHandler("printerperm");
         this.commandHandler.addCommand(new CommandReload());
         this.commandHandler.addCommand(new CommandVersion());
     }
@@ -115,6 +115,6 @@ public class Main extends JavaPlugin
 
     public Permission getPermission()
     {
-        return permission;
+        return this.permission;
     }
 }
